@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "Flash Topics",
   "version": "1.0",
-  "description": "Muestra palabras aleatorias de un diccionarior",
-  "permissions": ["notifications", "storage"],
+  "description": "Muestra definiciones de conceptos aleatorios",
+  "permissions": ["notifications", "storage", "alarms"],
   "background": {
     "service_worker": "background.js"
   },
