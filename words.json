@@ -1,0 +1,39 @@
+[
+  {
+    "term": "proposición",
+    "definition": "Afirmación o enunciado que puede ser evaluado como verdadero o falso. Es la unidad básica de razonamiento en lógica y matemáticas."
+  },
+  {
+    "term": "definición",
+    "definition": "Explicación precisa de un concepto o término matemático, describiendo sus propiedades esenciales para que pueda ser reconocido y utilizado en razonamientos posteriores."
+  },
+  {
+    "term": "postulado",
+    "definition": "Afirmación aceptada como verdadera sin necesidad de demostración, que sirve como punto de partida para construir teorías y desarrollar demostraciones formales."
+  },
+  {
+    "term": "teorema",
+    "definition": "Proposición que ha sido demostrada mediante argumentos lógicos basados en axiomas, postulados y otros teoremas previos. Representa un resultado fundamental dentro de una teoría."
+  },
+  {
+    "term": "lema",
+    "definition": "Resultado matemático probado que se utiliza como herramienta auxiliar para facilitar la demostración de un teorema más general o complejo."
+  },
+  {
+    "term": "corolario",
+    "definition": "Proposición que se deduce de manera directa e inmediata de un teorema ya demostrado, generalmente aportando una consecuencia práctica o sencilla."
+  },
+  {
+    "term": "recíproco",
+    "definition": "Enunciado que invierte la relación de un teorema o proposición. Si el teorema dice 'Si A, entonces B', su recíproco diría 'Si B, entonces A'. Su validez debe demostrarse por separado."
+  },
+  {
+    "term": "escolio",
+    "definition": "Comentario, nota o explicación adicional que acompaña a una definición, teorema o demostración, con el fin de aclarar, contextualizar o aportar intuición sobre el resultado, sin ser un resultado formal."
+  },
+  {
+    "term": "problema",
+    "definition": "Enunciado matemático planteado para ser resuelto mediante construcción, cálculo o demostración, usualmente con el objetivo de aplicar conceptos o desarrollar técnicas."
+  }
+]
+
