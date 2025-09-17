@@ -1,7 +1,84 @@
 <!DOCTYPE html>
-<html>
-  <head><title>Palabra Aleatoria</title></head>
-  <body>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flash Topics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #f9f9f9;
+      color: #111;
+      width: 350px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #333;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .topic-btn {
+      padding: 0.8rem;
+      border: 2px solid #4b4bff;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .topic-btn:hover {
+      background: #f0f0ff;
+      transform: translateY(-2px);
+    }
+
+    .topic-btn.selected {
+      background: #4b4bff;
+      color: white;
+    }
+
+    #guardar {
+      display: block;
+      width: 100%;
+      padding: 0.9rem;
+      background: #4b4bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    #guardar:hover {
+      background: #3737d1;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <h3>Flash Topics</h3>
+
+  <div class="grid" id="temas">
+    <!-- Se rellenará dinámicamente con popup.js -->
+  </div>
+
+  <button id="guardar">Guardar selección</button>
+
+  <script src="popup.js"></script>
+</body>
 </html>
 

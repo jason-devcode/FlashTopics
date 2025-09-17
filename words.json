@@ -1,4 +1,5 @@
-[
+{
+  "aritmetica": [
   {
     "term": "proposición",
     "definition": "Afirmación o enunciado que puede ser evaluado como verdadero o falso. Es la unidad básica de razonamiento en lógica y matemáticas."
@@ -35,5 +36,5 @@
     "term": "problema",
     "definition": "Enunciado matemático planteado para ser resuelto mediante construcción, cálculo o demostración, usualmente con el objetivo de aplicar conceptos o desarrollar técnicas."
   }
-]
-
+  ]
+}

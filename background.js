@@ -1,44 +1,37 @@
-// background.js (service worker)
+function mostrarNotificacion() {
+  chrome.storage.local.get(["temas", "temaSeleccionado"], (res) => {
+    const temas = res.temas || {};
+    const temaSeleccionado = res.temaSeleccionado;
 
-// Crear alarma al instalar
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.alarms.create("showWordAlarm", { periodInMinutes: 1 });
-});
+    if (!temaSeleccionado || !temas[temaSeleccionado] || temas[temaSeleccionado].length === 0) {
+      console.log("No hay tema seleccionado o no tiene conceptos.");
+      return;
+    }
 
-// Escuchar alarma
-chrome.alarms.onAlarm.addListener((alarm) => {
-  if (alarm.name === "showWordAlarm") {
-    loadWordsAndShow();
-  }
-});
+    // Seleccionar concepto aleatorio del tema seleccionado
+    const conceptos = temas[temaSeleccionado];
+    const randomIndex = Math.floor(Math.random() * conceptos.length);
+    const { term, definition } = conceptos[randomIndex];
 
-// Escuchar clic en el icono de la extensión
-chrome.action.onClicked.addListener(() => {
-  loadWordsAndShow();
-});
-
-// Cargar JSON y mostrar palabra
-function loadWordsAndShow() {
-  fetch(chrome.runtime.getURL("words.json"))
-    .then(res => res.json())
-    .then(data => {
-      showRandomWord(data);
-    })
-    .catch(err => console.error("Error cargando words.json:", err));
-}
-
-// Mostrar palabra aleatoria
-function showRandomWord(words) {
-  if (!words || words.length === 0) return;
-
-  const word = words[Math.floor(Math.random() * words.length)];
-
-  chrome.notifications.create({
-    type: "basic",
-    iconUrl: "icon.png",
-    title: word.term,
-    message: word.definition,
-    requireInteraction: true
+    // Crear notificación
+    chrome.notifications.create({
+      type: "basic",
+      iconUrl: "icon.png",
+      title: term,
+      message: definition,
+      priority: 2
+    });
   });
 }
+
+// Configurar alarma para mostrar notificaciones cada cierto tiempo
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.alarms.create("flashTopic", { delayInMinutes: 1, periodInMinutes: 5 });
+});
+
+chrome.alarms.onAlarm.addListener((alarm) => {
+  if (alarm.name === "flashTopic") {
+    mostrarNotificacion();
+  }
+});
 

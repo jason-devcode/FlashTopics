@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Flash Topics",
-  "version": "1.0",
-  "description": "Muestra definiciones de conceptos aleatorios",
-  "permissions": ["notifications", "storage", "alarms"],
+  "version": "2.0",
+  "description": "Muestra definiciones de conceptos aleatorios por categorías",
+  "permissions": ["notifications", "storage", "alarms", "downloads"],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
     "default_popup": "popup.html"
-  }
+  },
+  "options_page": "options.html"
 }
 

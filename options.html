@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrar Flash Topics</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f5f6fa;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #34495e;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #d0d6dc;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: border 0.15s, box-shadow 0.15s;
+      background: #fff;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #2b8ed0;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(43,142,208,0.08);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .btn {
+      background: #2b8ed0;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn:hover { background: #1f6fa7; }
+
+    .btn-green { background: #2aa05a; }
+    .btn-green:hover { background: #1f8a43; }
+
+    .btn-danger {
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .theme-block {
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eef2f5;
+    }
+
+    .theme-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      color: #2c3e50;
+    }
+
+    .concept {
+      background: #fbfdfe;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid #eef6fb;
+    }
+
+    .concept .text {
+      flex: 1;
+      margin-right: 8px;
+      white-space: pre-wrap;
+    }
+
+    .backup-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .muted {
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>⚡ Administrar Flash Topics</h1>
+
+  <!-- Crear nuevo tema -->
+  <section>
+    <h2>Crear nuevo tema</h2>
+    <input id="newTheme" type="text" placeholder="Nombre del tema" />
+    <button id="addThemeBtn" class="btn">➕ Agregar</button>
+  </section>
+
+  <!-- Agregar concepto -->
+  <section>
+    <h2>Agregar concepto</h2>
+    <select id="themeSelect" aria-label="Tema"></select>
+    <input id="termInput" type="text" placeholder="Término" />
+    <textarea id="definitionInput" placeholder="Definición"></textarea>
+    <button id="addConceptBtn" class="btn btn-green">➕ Agregar concepto</button>
+  </section>
+
+  <!-- Temas y conceptos -->
+  <section>
+    <h2>Temas y conceptos</h2>
+    <div id="themesContainer" class="muted">Cargando...</div>
+  </section>
+
+  <!-- Backup -->
+  <section>
+    <h2>Backup</h2>
+    <div class="backup-buttons">
+      <button id="exportBtn" class="btn">📤 Exportar JSON</button>
+      <label for="importFile" class="btn">📥 Importar JSON</label>
+      <input id="importFile" type="file" class="hidden" accept=".json,application/json" />
+      <span id="importNote" class="muted">Formato: { "Tema": [ { "term": "...", "definition": "..." }, ... ], ... }</span>
+    </div>
+  </section>
+
+  <script src="options.js"></script>
+</body>
+</html>
+
